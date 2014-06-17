@@ -6,9 +6,9 @@ public class MyBotMain {
     
     public static void main(String[] args) throws Exception {
     	
-        int mainVersion = 1;
-        int version = 0;
-        int secVersion = 1;
+        int majorVersion = 1;
+        int minorVersion = 0;
+        int patchVersion = 1;
         
     	Scanner scanner = new Scanner(System.in);
     	tools tools = new tools();
@@ -18,7 +18,7 @@ public class MyBotMain {
     	String password;
     	String channel;
     	
-    	System.out.println("FeDenBot version " + mainVersion + "." + version + "." + secVersion);
+    	System.out.println("FeDenBot version " + majorVersion + "." + minorVersion + "." + patchVersion);
     	
     	System.out.println("server?");
     	//server = "199.9.248.248";
