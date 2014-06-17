@@ -22,30 +22,7 @@ private long startTime = 0;
     	int RNGMStorage;
     	
     		if (amount < limit) {amount++;}	
-<<<<<<< HEAD
-    			
-    		if (message.startsWith("!potatoeat ") && amount == limit) {
-				sendMessage(channel,"/me forces " + message.substring(11) + " to eat a potato.");
-				amount = 0;
-				} else {}
-			
-=======
-    				
-    				//right here, I am breaking the string message into 2 parts a set number
-    				//ov charectars over. the only other way I know how to do this is with 
-    				// symbols to start/stop at.
-    				
-    			        if (message.startsWith("!eep +") && sender.equalsIgnoreCase("exogreenmc")) {
-    				eepS = message.substring(6);
-   					eep = Integer.parseInt(eepS);
-	   				sendMessage(channel,"Tanyas eep count is now " + eep);
-				} else {}
     		
-    			        if (message.startsWith("!eep") && amount == limit) {
-   	   				sendMessage(channel,"tanyas eep count is currently " + eep);
-   				} else {}
-   				
->>>>>>> origin/master
    				if (message.startsWith("!amount") && sender.equalsIgnoreCase("exogreenmc")) {
    	   				sendMessage(channel,"amount = " + amount);
    				} else {}
