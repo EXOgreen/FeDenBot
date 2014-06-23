@@ -16,7 +16,6 @@ private long startTime = 0;
     public void onMessage(String channel, String sender,
                        String login, String hostname, String message) {
     	Random RNG = new Random();
-    	tools tools = new tools();
     	int conchMN = 0;
     	int RNGStorage;
     	int RNGMStorage;
@@ -29,6 +28,7 @@ private long startTime = 0;
    				
    				if (message.toLowerCase().startsWith("!anti") && amount == limit) {
     				sendMessage(channel,"Joke Time!");
+    				amount = 0;
    				} else {}
    					
     			if (message.toLowerCase().startsWith("!arrow") && amount == limit) {
@@ -38,6 +38,7 @@ private long startTime = 0;
     			
    				if (message.toLowerCase().startsWith("boop") && amount == limit) {
     				sendMessage(channel,"Tanya, they boop-ed you");
+    				amount = 0;
    				} else {}
    				
    				if (message.toLowerCase().startsWith("!bot") && amount == limit) {
@@ -76,12 +77,13 @@ private long startTime = 0;
    				} else {}
    				
     			if (message.toLowerCase().startsWith("!eep +") && sender.equalsIgnoreCase("exogreenmc")) {
-    				eep += tools.changeint(message, 6);
+    				eep += Integer.parseInt(message.substring (6));
 	   				sendMessage(channel,"Tanyas eep count is now " + eep);
 				} else {}
     		
     			if (message.toLowerCase().startsWith("!eep") && amount == limit) {
    	   				sendMessage(channel,"tanyas eep count is currently " + eep);
+   	   				amount = 0;
    				} else {}
    				
     			if (message.toLowerCase().startsWith("!end") && sender.equalsIgnoreCase("exogreenmc")) {
@@ -113,19 +115,20 @@ private long startTime = 0;
     			} else {}
     			
    				if (message.toLowerCase().startsWith("!limit") && sender.equalsIgnoreCase("exogreenmc")) {
-   					limit = tools.changeint(message, 7);
+   					limit = Integer.parseInt(message.substring (7));
    					sendMessage(channel,"You may now use the bot commands every " + limit + " messages");
    					amount = 0;
    				} else {}
    				
    				if (message.toLowerCase().startsWith("!limit") && sender.equalsIgnoreCase("ironbeast01")) {
-   					limit = tools.changeint(message, 7);
+   					limit = Integer.parseInt(message.substring (7));
    					sendMessage(channel,"You may now use the bot commands every " + limit + " messages");
    					amount = 0;
    				} else {}
    				
    				if (message.toLowerCase().startsWith("!lmt")  && amount == limit) {
    	   				sendMessage(channel,"The limit is curently " + limit);
+   	   				amount = 0;
    				} else {}
    				
    				if (message.toLowerCase().startsWith("!off") && sender.equalsIgnoreCase("exogreenmc")) {
@@ -152,12 +155,13 @@ private long startTime = 0;
    				} else {}
    				
     			if (message.toLowerCase().startsWith("!sorry +") && sender.equalsIgnoreCase("exogreenmc")) {
-   					sorry += tools.changeint(message, 8);
+   					sorry += Integer.parseInt(message.substring (8));
 	   				sendMessage(channel,"Ants sorry count is now " + sorry);
 				} else {}
     		
     			if (message.toLowerCase().equalsIgnoreCase("!sorry") && amount == limit) {
    	   				sendMessage(channel,"Ants sorry count is currently " + sorry);
+   	   				amount = 0;
    				} else {}
    				
     			if (message.toLowerCase().startsWith("!stop") && sender.equalsIgnoreCase("exogreenmc")) {
@@ -170,6 +174,7 @@ private long startTime = 0;
     			
     			if (message.toLowerCase().startsWith("test") && amount == limit) {
     				sendMessage(channel,"Test failed.");
+    				amount = 0;
     			} else {}
     			
    				if (message.toLowerCase().startsWith("!time") && sender.equalsIgnoreCase("exogreenmc")) {
@@ -183,7 +188,7 @@ private long startTime = 0;
    				} else {}
    				
    				if (message.toLowerCase().startsWith("!rng") && amount == limit) {
-    				RNGMStorage = tools.changeint(message, 5);
+    				RNGMStorage = Integer.parseInt(message.substring (5));
     				RNGStorage = 1+RNG.nextInt(RNGMStorage);
     				sendMessage(channel, "" + RNGStorage);
     				amount = 0;

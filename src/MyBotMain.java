@@ -11,7 +11,6 @@ public class MyBotMain {
         int patchVersion = 1;
         
     	Scanner scanner = new Scanner(System.in);
-    	tools tools = new tools();
     	String server;
     	String portS;
     	int port = 80;
@@ -27,7 +26,7 @@ public class MyBotMain {
     	
     	System.out.println("Port?");
     	portS = scanner.nextLine();
-    	port = tools.changeint(portS, 0);
+    	port = Integer.parseInt(portS.substring (0));
 		
 		System.out.println("password?");
 		password = scanner.nextLine();
